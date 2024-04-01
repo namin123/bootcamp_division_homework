@@ -5,7 +5,17 @@
 
 def main():
     # 이곳에 코드를 작성해주세요!
+    n=int(input())
 
+    while n <= 0:
+        print("X")
+        n=int(input())
+    
+    sum_n=0
+    for i in range(1, n+1):
+        sum_n +=i
+
+    print(sum_n)
     return
 
 

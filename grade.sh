@@ -9,28 +9,14 @@ IS_PASS=true
 
 if [ "$1" == "c" ]; then
     echo "C 채점을 시작합니다."
-    if ! (which gcc >/dev/null); then
-        echo "GCC가 없습니다. 채점을 종료합니다."
-        exit 1
-    fi
 else
     echo "Python 채점을 시작합니다."
-    if ! (which python3 >/dev/null); then
-        if ! (which python >/dev/null); then
-            echo "설치된 python이 없습니다. 채점을 종료합니다."
-            exit 1
-        fi
-    fi
 fi
 
 function python_result() {
     # $1: index of problem, $2: input file, $3: output file
 
-    if ! (which python3 >/dev/null); then
-        result=`cat $2 | python ./python/$1.py | tr -d '\r' | tr -d '\t'`
-    else
-        result=`cat $2 | python3 ./python/$1.py | tr -d '\r' | tr -d '\t'`
-    fi
+    result=`cat $2 | python ./python/$1.py | tr -d '\r' | tr -d '\t'`
     output=`cat $3 | tr -d '\r' | tr -d '\t'`
 
 

@@ -5,7 +5,16 @@
 
 def main():
     # 이곳에 코드를 작성해주세요!
+    n=int(input())
+    sum_n=0
+    fact=1
 
+    for i in range(1,n+1):
+        sum_n +=i
+        fact*=i
+
+    print(sum_n)
+    print(fact)
     return
 
 

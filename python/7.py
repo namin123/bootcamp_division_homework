@@ -5,6 +5,25 @@
 
 def main():
     # 이곳에 코드를 작성해주세요!
+    year=int(input())
+    month=int(input())
+    
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        leap_year = True
+    else:
+        leap_year = False
+    
+    if month in [4, 6, 9, 11]:
+        days = 30
+    elif month == 2:
+        if leap_year:
+            days = 29
+        else:
+            days = 28
+    else:
+        days = 31
+
+    print(days)
 
     return
 

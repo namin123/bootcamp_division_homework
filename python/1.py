@@ -5,7 +5,10 @@
 
 def main():
     # 이곳에 코드를 작성해주세요!
-
+    a=input()
+    reversed_a = a[::-1]
+    print(reversed_a)
+  
     return
 
 
